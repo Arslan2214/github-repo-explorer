@@ -7,6 +7,9 @@ const defaultAvatarUrl =
   "https://avatars.githubusercontent.com/u/4864412?s=80&v=4";
 
 export default function UserDisplay({ userData, error }) {
+    console.log("UserDisplay userData:", userData);
+    console.log("UserDisplay userData.login:", userData?.login);
+
   return (
     <>
       {error && (
@@ -110,10 +113,12 @@ export default function UserDisplay({ userData, error }) {
         </div>
       )}
       <div>
-    </div>
-        <>
-            {userData && <RepositoryDisplay username={userData.login} />}
-        </>
+        {userData?.login ? (
+          <RepositoryDisplay username={userData.login} />
+        ) : (
+          console.log("No login found in userData")
+        )}
+      </div>
     </>
   );
 }

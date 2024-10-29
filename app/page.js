@@ -1,4 +1,5 @@
 import Form from "./(sections)/Form";
+import RepositoryDisplay from "./(sections)/RepositoryDisplay";
 
 export default function Home() {
   return (
